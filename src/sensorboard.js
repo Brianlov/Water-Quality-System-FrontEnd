@@ -35,7 +35,7 @@ const Sensorboard = () => {
   // 🟢 Fetch from your Node.js backend
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/fetch-data');
+      const response = await fetch('https://water-quality-sys.onrender.com/fetch-data');
       const json = await response.json();
       const feeds = json.insertedData || [];
 
