@@ -37,7 +37,9 @@ const Sensorboard = () => {
     try {
       const response = await fetch('https://water-quality-sys.onrender.com/fetch-data');
       const json = await response.json();
-      const feeds = json.insertedData || [];
+      
+      // The backend returns the array inside `json.data`
+      const feeds = json.data || [];
 
       if (feeds.length === 0) {
         console.warn('No new data returned from backend');
